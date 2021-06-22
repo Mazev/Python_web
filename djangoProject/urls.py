@@ -16,11 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from templates import main_app, secondary_app
-
-urlpatterns = [
+urlpatterns = (
     path('admin/', admin.site.urls),
-    path('main_app/', include("main_app.urls")),
-    path('secondary_app', include('secondary_app.urls'))
+    path('main_app/', include('templates.main_app.urls')),
+    path('secondary_app/', include('templates.secondary_app.urls'))
 
-]
+)
